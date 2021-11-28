@@ -1,0 +1,5 @@
+configuration-as-code:latest
+credentials:latest
+warnings-ng:latest
+git:latest
+job-dsl:latest

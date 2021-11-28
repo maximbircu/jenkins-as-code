@@ -1,0 +1,24 @@
+jenkins:
+  systemMessage: "My custom Jenkins! \n\n"
+  numExecutors: 4
+  mode: NORMAL
+  scmCheckoutRetryCount: 3
+  labelString: "jenkins"
+
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: ${JENKINS_ADMIN_USER_ID}
+          password: ${${JENKINS_ADMIN_USER_PASSWORD_ID}}
+
+  remotingSecurity:
+    enabled: true
+
+  crumbIssuer: "standard"
+  authorizationStrategy: loggedInUsersCanDoAnything
+
+unclassified:
+  location:
+    adminAddress: ${JENKINS_ADMIN_USER_EMAIL}
+    url: ${JENKINS_URL}
