@@ -11,7 +11,7 @@ multibranchPipelineJob('android-app-multibranch-pipeline') {
             source(class: 'org.jenkinsci.plugins.github_branch_source.GitHubSCMSource') {
                 id(UUID.randomUUID().toString())
                 credentialsId("github-http")
-                repository("counter-android-app")
+                repository("jenkins-as-code")
                 repositoryUrl(System.getenv("ANDROID_APP_REPOSITORY_URL"))
                 traits {
                     'org.jenkinsci.plugins.github_branch_source.BranchDiscoveryTrait'()

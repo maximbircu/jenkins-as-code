@@ -15,10 +15,15 @@ ENV JENKINS_JAVA_OPTIONS "-Dcasc.reload.token=${CASC_RELOAD_TOKEN}"
 
 USER root
 RUN apt-get update
+RUN apt-get install -y unzip wget
 
 # Install Jenkins plugins
 COPY configurations/plugins.txt /var/configurations/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /var/configurations/plugins.txt
+
+# Setup Android SDK
+COPY tools/install-android-sdk.sh /install-android-sdk.sh
+RUN /install-android-sdk.sh
 
 ###############################################################################
 ## GENERAL ENVIRONMENT VARIABLES

@@ -1,9 +1,9 @@
 package com.maximbircu.counter
 
 import android.os.Bundle
+import android.widget.TextView
 import com.maximbircu.counter.mvp.BaseActivity
 import com.maximbircu.counter.mvp.View
-import kotlinx.android.synthetic.main.activity_main.*
 
 interface CounterView : View {
     fun setCounter(number: Int)
@@ -15,11 +15,11 @@ class CounterActivity : BaseActivity(), CounterView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        increment.setOnClickListener(presenter::onIncrement)
-        decrement.setOnClickListener(presenter::onDecrement)
+        findViewById<TextView>(R.id.increment).setOnClickListener(presenter::onIncrement)
+        findViewById<TextView>(R.id.decrement).setOnClickListener(presenter::onDecrement)
     }
 
     override fun setCounter(number: Int) {
-        counter.text = number.toString()
+        findViewById<TextView>(R.id.counter).text = number.toString()
     }
 }

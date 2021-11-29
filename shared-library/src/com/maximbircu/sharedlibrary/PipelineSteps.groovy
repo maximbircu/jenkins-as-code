@@ -14,12 +14,12 @@ class PipelineSteps {
         gradlew "clean"
     }
 
-    void build() {
-        gradlew "assembleDebug"
-    }
-
     void test() {
         gradlew "test"
+    }
+
+    void build() {
+        gradlew "assembleDebug"
     }
 
     void cleanWorkspace() {
