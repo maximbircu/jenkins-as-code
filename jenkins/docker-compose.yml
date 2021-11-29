@@ -16,25 +16,9 @@ services:
       - github_http
     environment:
       CASC_JENKINS_CONFIG: /var/configurations
-
-      ################################################################################
-      ### JENKINS GENERAL CONFIGURATION
-      ################################################################################
-      JENKINS_URL: http://localhost:8080/
       JENKINS_HOME: /var/jenkins_home
-
-      JENKINS_ADMIN_USER_ID: admin
-      JENKINS_ADMIN_USER_PASSWORD_ID: jenkins_admin_user
-      JENKINS_ADMIN_USER_EMAIL: admin@gmail.com
-
-      ################################################################################
-      ### CREDENTIALS
-      ################################################################################
-
-      # Github HTTP
-      GITHUB_USER_HTTP: username
-      GITHUB_USER_HTTP_PASSWORD_ID: github_http
-
+    env_file:
+      - .env
 
 secrets:
   jenkins_admin_user:

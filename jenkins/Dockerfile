@@ -20,10 +20,10 @@ RUN apt-get update
 COPY configurations/plugins.txt /var/configurations/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /var/configurations/plugins.txt
 
-################################################################################
-### GENERAL ENVIRONMENT VARIABLES
-################################################################################
+###############################################################################
+## GENERAL ENVIRONMENT VARIABLES
+###############################################################################
 
-#ENV JENKINS_URL http://localhost:8080/
-#ENV JENKINS_ADMIN_USER_NAME admin
-#ENV JENKINS_ADMIN_USER_PASSWORD admin
+ENV JENKINS_URL http://localhost:8080/
+ENV JENKINS_ADMIN_USER_NAME admin
+ENV JENKINS_ADMIN_USER_PASSWORD admin
