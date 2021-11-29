@@ -2,20 +2,31 @@ package com.maximbircu.sharedlibrary
 
 class PipelineSteps {
     private Script script
+    private Config config
 
-    PipelineSteps(Script script) {
+    PipelineSteps(Script script, Config config) {
         this.script = script
+        this.config = config
+
     }
 
     void clean() {
-        script.sh "${script.env.WORKSPACE}/gradlew clean"
+        gradlew "clean"
     }
 
     void build() {
-        script.sh "${script.env.WORKSPACE}/gradlew assembleDebug"
+        gradlew "assembleDebug"
     }
 
     void test() {
-        script.sh "${script.env.WORKSPACE}/gradlew test"
+        gradlew "test"
+    }
+
+    void cleanWorkspace() {
+        script.cleanWs cleanWhenFailure: false
+    }
+
+    private void gradlew(String command) {
+        script.dir("${script.env.WORKSPACE}/${config.androidAppRootDirectory}") { script.sh "./gradlew $command" }
     }
 }

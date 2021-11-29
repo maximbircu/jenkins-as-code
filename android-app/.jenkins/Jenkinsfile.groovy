@@ -2,4 +2,6 @@
 
 @Library('shared-library') _
 
-stages { }
+stages(
+    androidAppRootDirectory: "android-app"
+)
