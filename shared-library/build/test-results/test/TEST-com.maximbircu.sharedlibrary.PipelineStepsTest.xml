@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.maximbircu.sharedlibrary.PipelineStepsTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-11-29T12:53:05" hostname="mbircu-mlt.local" time="0.349">
+  <properties/>
+  <testcase name="runs the test gradle task" classname="com.maximbircu.sharedlibrary.PipelineStepsTest" time="0.336"/>
+  <testcase name="cleans the workspace" classname="com.maximbircu.sharedlibrary.PipelineStepsTest" time="0.003"/>
+  <testcase name="runs the assemble gradle task" classname="com.maximbircu.sharedlibrary.PipelineStepsTest" time="0.004"/>
+  <testcase name="runs the clean gradle task" classname="com.maximbircu.sharedlibrary.PipelineStepsTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

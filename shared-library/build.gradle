@@ -1,0 +1,24 @@
+apply plugin: 'groovy'
+
+sourceSets {
+    main.groovy.srcDir 'src/main/groovy'
+    test.groovy.srcDir 'src/test/groovy'
+}
+
+apply from: 'gradle/codenarc.gradle'
+
+repositories {
+    maven { url 'https://repo.jenkins-ci.org/public/' }
+    mavenCentral()
+}
+
+configurations {
+    testPlugins {}
+    integrationTestCompile.extendsFrom testCompile
+    integrationTestRuntime.extendsFrom testRuntime
+}
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy-all:3.0.8'
+    testImplementation 'junit:junit:4.13.2'
+}
