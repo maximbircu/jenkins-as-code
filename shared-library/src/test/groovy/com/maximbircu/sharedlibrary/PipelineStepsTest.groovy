@@ -19,10 +19,10 @@ class PipelineStepsTest {
 
         assertBashCommandExecuted("./gradlew clean")
 
-        def config = new Config([androidAppRootDirectory: "android-app"])
+        def config = new Config([projectRootDirectory: "android-app"])
 
         def instance = scriptMock.proxyInstance()
-        new PipelineSteps(instance, config).clean()
+        new AndroidAppPipelineSteps(instance, config).clean()
         scriptMock.verify(instance)
     }
 
@@ -36,10 +36,10 @@ class PipelineStepsTest {
 
         assertBashCommandExecuted("./gradlew test")
 
-        def config = new Config([androidAppRootDirectory: "android-app"])
+        def config = new Config([projectRootDirectory: "android-app"])
 
         def instance = scriptMock.proxyInstance()
-        new PipelineSteps(instance, config).test()
+        new AndroidAppPipelineSteps(instance, config).test()
         scriptMock.verify(instance)
     }
 
@@ -53,10 +53,10 @@ class PipelineStepsTest {
 
         assertBashCommandExecuted("./gradlew assembleDebug")
 
-        def config = new Config([androidAppRootDirectory: "android-app"])
+        def config = new Config([projectRootDirectory: "android-app"])
 
         def instance = scriptMock.proxyInstance()
-        new PipelineSteps(instance, config).assemble()
+        new AndroidAppPipelineSteps(instance, config).assemble()
         scriptMock.verify(instance)
     }
 
@@ -64,10 +64,10 @@ class PipelineStepsTest {
     void "cleans the workspace"() {
         scriptMock.demand.cleanWs { args -> assertFalse(args.cleanWhenFailure) }
 
-        def config = new Config([androidAppRootDirectory: "android-app"])
+        def config = new Config([projectRootDirectory: "android-app"])
 
         def instance = scriptMock.proxyInstance()
-        new PipelineSteps(instance, config).cleanWorkspace()
+        new AndroidAppPipelineSteps(instance, config).cleanWorkspace()
         scriptMock.verify(instance)
     }
 

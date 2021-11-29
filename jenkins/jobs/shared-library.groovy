@@ -1,9 +1,9 @@
-multibranchPipelineJob('android-app-multibranch-pipeline') {
-    displayName "android-app-multibranch-pipeline"
-    description "Demo Counter Android App"
+multibranchPipelineJob('shared-library') {
+    displayName "shared-library"
+    description "Shared library"
     factory {
         workflowBranchProjectFactory {
-            scriptPath('android-app/.jenkins/Jenkinsfile.groovy')
+            scriptPath('shared-library/.jenkins/Jenkinsfile.groovy')
         }
     }
     configure {
@@ -12,7 +12,7 @@ multibranchPipelineJob('android-app-multibranch-pipeline') {
                 id(UUID.randomUUID().toString())
                 credentialsId("github-http")
                 repository("jenkins-as-code")
-                repositoryUrl(System.getenv("ANDROID_APP_REPOSITORY_URL"))
+                repositoryUrl(System.getenv("SHARED_LIBRARY_REPOSITORY_URL"))
                 traits {
                     'org.jenkinsci.plugins.github_branch_source.BranchDiscoveryTrait'()
                     'org.jenkinsci.plugins.github_branch_source.ForkPullRequestDiscoveryTrait'()

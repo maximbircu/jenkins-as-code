@@ -3,11 +3,11 @@ package com.maximbircu.sharedlibrary
 /**
  * Android application pipeline steps.
  */
-class PipelineSteps {
+class AndroidAppPipelineSteps {
     private final Script script
     private final Config config
 
-    PipelineSteps(Script script, Config config) {
+    AndroidAppPipelineSteps(Script script, Config config) {
         this.script = script
         this.config = config
     }
@@ -29,6 +29,6 @@ class PipelineSteps {
     }
 
     private void gradlew(String command) {
-        script.dir("${script.env.WORKSPACE}/${config.androidAppRootDirectory}") { script.sh "./gradlew $command" }
+        script.dir("${script.env.WORKSPACE}/${config.projectRootDirectory}") { script.sh "./gradlew $command" }
     }
 }
