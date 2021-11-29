@@ -22,3 +22,14 @@ unclassified:
   location:
     adminAddress: ${JENKINS_ADMIN_USER_EMAIL}
     url: ${JENKINS_URL}
+  globalLibraries:
+    libraries:
+      - name: ${SHARED_LIBRARY_NAME}
+        defaultVersion: ${SHARED_LIBRARY_VERSION}
+        retriever:
+          modernSCM:
+            scm:
+              git:
+                remote: ${SHARED_LIBRARY_REPOSITORY_URL}
+                credentialsId: "github-http"
+            libraryPath: "shared-library"

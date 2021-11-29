@@ -1,5 +1,14 @@
 configuration-as-code:latest
 credentials:latest
 warnings-ng:latest
+sshd:latest
+git-server:latest
 git:latest
+github:latest
 job-dsl:latest
+jobConfigHistory:latest
+workflow-cps-global-lib:latest
+build-pipeline-plugin:latest
+pipeline-stage-view:latest
+ws-cleanup:latest
+timestamper:latest

@@ -1,0 +1,2 @@
+jobs:
+  - file: /jobs/jenkins-as-code.groovy

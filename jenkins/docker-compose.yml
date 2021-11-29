@@ -11,6 +11,7 @@ services:
     volumes:
       - jenkins_home:/var/jenkins_home
       - ./configurations:/var/configurations
+      - ./jobs:/jobs
     secrets:
       - jenkins_admin_user
       - github_http
